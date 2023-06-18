@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import styled from 'styled-components';
 
 const HeaderWrapper = styled.header`
@@ -18,12 +18,26 @@ const Nav = styled.nav`
 const Ul = styled.ul`
   display: flex;
   list-style: none;
-  margin: 0;
+  margin:0;
   padding: 0;
+  flex-grow: 1;
+
+  &:first-child {
+    margin-right: auto;
+  }
+
+  &:last-child {
+    margin-left: 10px;
+    margin-right: 0;
+  }
 `;
 
 const Li = styled.li`
-  margin-right: 10px;
+  margin-right: 10% ;
+  
+  &:first-child {
+    margin-right: 25%;
+  }
 
   &:last-child {
     margin-right: 0;
@@ -46,37 +60,55 @@ const LoginButton = styled.button`
   color: #333;
   font-weight: bold;
   cursor: pointer;
-
+  
+  &:hover {
+    color: #555;
+  }
+`;
+const MyPageButton = styled.button`
+  background-color: transparent;
+  border: none;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  
   &:hover {
     color: #555;
   }
 `;
 
 const Header: React.FC = () => {
+
+    const navigate = useNavigate();
+
+    const handleMypageClick = () => {
+        navigate('/Mypage');
+    };
+    const handleLoginClick = () => {
+        navigate("/Login")
+    }
     return (
         <HeaderWrapper>
             <Nav>
                 <Ul>
                     <Li>
-                        <NavLink to="/">Home</NavLink>
+                        <NavLink to="/">logo</NavLink>
                     </Li>
                     <Li>
-                        <NavLink to="/section1">Section 1</NavLink>
+                        <NavLink to="/Study">공부하기</NavLink>
                     </Li>
                     <Li>
-                        <NavLink to="/section2">Section 2</NavLink>
+                        <NavLink to="/Quiz">퀴즈풀기</NavLink>
                     </Li>
                     <Li>
-                        <NavLink to="/section3">Section 3</NavLink>
+                        <NavLink to="/Interview">면접준비</NavLink>
                     </Li>
                     <Li>
-                        <NavLink to="/section4">Section 4</NavLink>
-                    </Li>
-                    <Li>
-                        <NavLink to="/section5">Section 5</NavLink>
+                        <NavLink to="/Ranking">랭킹보기</NavLink>
                     </Li>
                 </Ul>
-                <LoginButton>Login</LoginButton>
+                <MyPageButton onClick={handleMypageClick}>Mypage</MyPageButton>
+                <LoginButton onClick={handleLoginClick}>Login</LoginButton>
             </Nav>
         </HeaderWrapper>
     );
