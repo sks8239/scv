@@ -7,24 +7,34 @@ const ButtonWrapper = styled.div`
 `;
 
 const DownloadButtonStyle = styled.button`
-  padding: 10px 20px;
-  margin-right: 10px;
-  background-color: white;
-  color: black;
+  padding: 15px 50px;
+  margin-right: 100px;
+  background-color: rgba(0, 12, 30, 0.7);
+  color: white;
   border: none;
   border-radius: 5px;
   font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
+  
+  &:hover{
+    background-color: rgb(78,89,104);
+  }
 `;
 
 const WebButtonStyle = styled.button`
-  padding: 10px 20px;
-  background-color: white;
-  color: black;
+  padding: 15px 50px;
+  background-color: rgba(0, 12, 30, 0.7);
+  color: white;
   border: none;
   border-radius: 5px;
   font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
+
+  &:hover{
+    background-color: rgb(78,89,104);
+  }
 `;
 
 export {ButtonWrapper, WebButtonStyle, DownloadButtonStyle};

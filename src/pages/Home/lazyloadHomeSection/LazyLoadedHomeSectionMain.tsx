@@ -31,7 +31,7 @@ const LazyLoadedSectionMain: React.FC = () => {
 
     return (
         <div>
-            <LazyLoadedSection backgroundColor="#00cec9">
+            <LazyLoadedSection backgroundColor="white">
                 <Section1Wrapper>
                     <h1>공부부터 면접까지<br/>SCV에서</h1>
                     <ButtonWrapper>
@@ -39,7 +39,7 @@ const LazyLoadedSectionMain: React.FC = () => {
                         <WebButton>웹에서 이용하기</WebButton>
                     </ButtonWrapper>
                     <button className="scroll-to-section2" onClick={scrollToSection}>
-                        아래로 이동
+                        ▽
                     </button>
                 </Section1Wrapper>
             </LazyLoadedSection>
@@ -52,7 +52,7 @@ const LazyLoadedSectionMain: React.FC = () => {
                 </Section2Wrapper>
             </LazyLoadedSection>
 
-            <LazyLoadedSection backgroundColor="gray">
+            <LazyLoadedSection backgroundColor="#F9FAFB">
                 <Section3Wrapper>
                     <h1>학교 랭크를 통해 경쟁하고,<br/>개인 랭크를 통해 본인의 실력을 파악하세요.</h1>
                 </Section3Wrapper>
