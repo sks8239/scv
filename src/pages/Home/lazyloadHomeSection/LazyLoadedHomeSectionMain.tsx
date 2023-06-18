@@ -31,7 +31,7 @@ const LazyLoadedSectionMain: React.FC = () => {
 
     return (
         <div>
-            <LazyLoadedSection backgroundColor="blue">
+            <LazyLoadedSection backgroundColor="#00cec9">
                 <Section1Wrapper>
                     <h1>공부부터 면접까지<br/>SCV에서</h1>
                     <ButtonWrapper>
