@@ -5,9 +5,11 @@ import AnimatedSectionWrapper from "./HomeStyleComponent/AnimatedSectionWrapper"
 interface LazyLoadedSectionProps {
   children: ReactNode;
   backgroundColor: string;
+
 }
 
 const LazyLoadedSection: React.FC<LazyLoadedSectionProps> = ({ children,  backgroundColor }) => {
+
   const [loaded, setLoaded] = React.useState(false);
 
   const sectionRef = React.useRef<HTMLDivElement>(null);

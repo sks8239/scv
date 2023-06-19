@@ -2,50 +2,67 @@ import styled from 'styled-components';
 
 export const BoxWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const BoxContent = styled.div`
-  flex-basis: 30%;
-  border: 1px solid black;
-  padding: 20px;
-  margin-right: 10px;
-  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
-  //.box {
-  //  position: relative;
-  //  height: 150px;
-  //  display: flex;
-  //  align-items: center;
-  //  justify-content: center;
-  //  background-color: #f1f5f8; /* Custom light gray color */
-  //  transition: background-color 0.3s ease-in-out;
-  //}
-  //
-  //.box:hover {
-  //  background-color: #cddcf9; /* Custom blue color */
-  //}
-  //
-  //.default-content {
-  //  font-size: 20px;
-  //}
-  //
-  //.hover-content {
-  //  position: absolute;
-  //  bottom: -50px;
-  //  left: 0;
-  //  width: 100%;
-  //  height: 30px;
-  //  display: flex;
-  //  align-items: center;
-  //  justify-content: center;
-  //  font-size: 18px;
-  //  opacity: 0;
-  //  transition: opacity 0.3s ease-in-out;
-  //}
-  //
-  //.box:hover .hover-content {
-  //  opacity: 1;
-  //}
+export const GroupWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 20px;
+`;
+
+export const ImageWrapper = styled.div`
+  margin-right: 100px;
+  margin-bottom: -250px;
+
+  position: relative;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+
+  &:hover {
+    opacity: 1;
+    transform: scale(1.1);
+    z-index: 100;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  .hover-content {
+    position: absolute;
+
+    font-size: 50px;
+    color: black;
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none; /* 텍스트가 마우스 이벤트를 차단하도록 설정 */
+  }
+
+  &:hover img {
+    opacity: 0.1;
+  }
+
+  &:hover .hover-content {
+    opacity: 1;
+    top:15%;
+    font-size: 1.55em;
+    font-weight: bold;
+  }
+`;
+
+export const ButtonWrapper = styled.div`
+  width: 300px;
+  margin-right: 100px;
 `;

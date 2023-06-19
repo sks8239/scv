@@ -7,14 +7,19 @@ import Interview from './pages/Interview/Interview'
 import Ranking from "./pages/Ranking/Ranking";
 import SelectPages from "./pages/SelectPages/SelectPages";
 import Mypage from "./pages/MyPage/Mypage";
-import Login from "./pages/Login/Login"
+import Login from "./pages/Login/Login";
+import SelectLanguageComponent from "./pages/Quiz/selectLanguageComponent";
+import store from "./Redux/ReduxStore";
+import {Provider} from "react-redux";
 function App(): JSX.Element {
   return (
     <>
+      <Provider store={store}>
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Quiz" element={<Quiz />} />
+            <Route path="/SelectLanguageComponent" element={<SelectLanguageComponent />} />
             <Route path="/Interview" element={<Interview />} />
             <Route path="/Study" element={<Study />} />
             <Route path="/Ranking" element={<Ranking />} />
@@ -23,6 +28,7 @@ function App(): JSX.Element {
           <Route path="/SelectPages" element={<SelectPages />} />
         </Routes>
       </Router>
+      </Provider>
     </>
   );
 }

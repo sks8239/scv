@@ -99,7 +99,7 @@ const Header: React.FC = () => {
                         <NavLink to="/Study">공부하기</NavLink>
                     </Li>
                     <Li>
-                        <NavLink to="/Quiz">퀴즈풀기</NavLink>
+                        <NavLink to="/SelectLanguageComponent">퀴즈풀기</NavLink>
                     </Li>
                     <Li>
                         <NavLink to="/Interview">면접준비</NavLink>
