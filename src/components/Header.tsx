@@ -6,6 +6,7 @@ const HeaderWrapper = styled.header`
   position: sticky;
   top: 0;
   background-color: #f5f5f5;
+  z-index: 100;
 `;
 
 const Nav = styled.nav`

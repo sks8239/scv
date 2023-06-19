@@ -1,12 +1,13 @@
 import styled from "styled-components";
 import backgroundImage from "../../../../images/session1background.png";
+import monitorImage from "../../../../images/monitor-removebg.png"
 
 const Section1Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: 90vh;
   position: relative;
 
   &:before {
@@ -53,7 +54,31 @@ const Section2Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 50%;
+  height: 150vh;
+  
+  &:before {
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    right: 0%;
+    bottom: 0;
+    background-image: url(${monitorImage});
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+    //box-shadow: -10px 0 10px rgba(0, 0, 0, 0.5);
+    opacity: 1; /* 배경 이미지의 투명도 설정 */
+    z-index: -1;
+  }
+  .section2head{
+    position: absolute;
+    top:20%;
+    left:10%;
+    font-size: 40px;
+    color:black;
+    font-weight: bold;
+  }
 `;
 
 const Section3Wrapper = styled.div`
@@ -61,7 +86,17 @@ const Section3Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: 150vh;
+  
+  
+  .section3head{
+    position: absolute;
+    top:20%;
+    left:10%;
+    font-size: 40px;
+    color:black;
+    font-weight: bold;
+  }
 `;
 
 const Section4Wrapper = styled.div`

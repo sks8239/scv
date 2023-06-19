@@ -1,11 +1,11 @@
 import React from "react";
-
+import { Download } from 'react-bootstrap-icons';
 const Login = () => {
 
 
     return (
         <>
-            로그인페이지
+            loginlogin
         </>
     )
 }

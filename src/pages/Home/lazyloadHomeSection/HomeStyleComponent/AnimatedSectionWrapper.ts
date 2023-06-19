@@ -16,7 +16,7 @@ const SectionWrapper = styled.div<{ backgroundColor: string }>`
   background-color: ${({ backgroundColor }) => backgroundColor};
   opacity: 0;
   visibility: hidden;
-  padding: 90vh;
+  padding: 100vh;
 `;
 
 const AnimatedSectionWrapper = styled(SectionWrapper)<{ loaded: boolean }>`
@@ -27,7 +27,7 @@ const AnimatedSectionWrapper = styled(SectionWrapper)<{ loaded: boolean }>`
       visibility: visible;
       animation: ${fadeInAnimation} 1s ease-in-out forwards;
       animation-delay: 0s;
-      height: 90vh; /* 높이를 100vh로 설정 */
+      height: 100vh; /* 높이를 100vh로 설정 */
       padding: 0; /* padding 제거 */
     `}
 `;
