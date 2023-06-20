@@ -1,4 +1,4 @@
-import LazyLoadedSection from "../LazyLoadedSection";
+import LazyLoadedSection from "../../../utils/LazyLoadedSection";
 import {Section1Wrapper, Section2Wrapper, Section4Wrapper} from "../HomeStyleComponent/SectionWrapper";
 import {ButtonWrapper, DownloadButtonStyle} from "../HomeStyleComponent/ButtonWrapper";
 import {Download} from "react-bootstrap-icons";

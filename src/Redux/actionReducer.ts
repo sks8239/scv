@@ -23,11 +23,11 @@ export interface UpdateScoreAction extends Action {
     payload: number;
 }
 
-// export const resetScore = (): ResetScoreAction => ({
-//     type: 'RESET_SCORE',
-// });
+export interface ResetScoreAction extends Action{
+    type: 'RESET_SCORE';
+};
 
-export type ActionTypes = SetQuestionsAction | SetAnswersAction | UpdateScoreAction;
+export type ActionTypes = SetQuestionsAction | SetAnswersAction | UpdateScoreAction | ResetScoreAction;
 
 // 액션 생성 함수
 export const setQuestions = (questions: Question[]): SetQuestionsAction => ({
@@ -45,6 +45,9 @@ export const updateScore = (score: number): UpdateScoreAction => ({
     payload: score,
 });
 
+export const resetScore = (): ResetScoreAction => ({
+    type: 'RESET_SCORE'
+});
 // 리듀서
 export interface QuizState {
     questions: Question[];
@@ -66,8 +69,8 @@ export const quizReducer = (state = initialState, action: ActionTypes): QuizStat
             return { ...state, answers: action.payload };
         case 'UPDATE_SCORE':
             return { ...state, score: state.score + action.payload };
-        // case 'RESET_SCORE':
-        //     return { ...state, score: 0 };
+        case 'RESET_SCORE':
+            return { ...state, score: 0 };
         default:
             return state;
     }

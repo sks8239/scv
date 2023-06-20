@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import AnimatedSectionWrapper from "./HomeStyleComponent/AnimatedSectionWrapper";
+import AnimatedSectionWrapper from "../components/Home/HomeStyleComponent/AnimatedSectionWrapper";
 
 
 interface LazyLoadedSectionProps {

@@ -6,7 +6,7 @@ const QuizButton: React.FC = () => {
     const navigate = useNavigate();
 
     const handleButtonClick = () => {
-        navigate('/SelectLanguageComponent');
+        navigate('/SelectLanguage');
     };
 
     return (

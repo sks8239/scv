@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 
-import { saveScrollPosition, restoreScrollPosition } from '../../utils/scrollUtils';
+import { saveScrollPosition, restoreScrollPosition } from '../utils/scrollUtils';
 
-import  Section1  from "./lazyloadHomeSection/HomeSection/Section1";
-import  Section2  from "./lazyloadHomeSection/HomeSection/Section2";
-import  Section3  from "./lazyloadHomeSection/HomeSection/Section3";
-import  Section4  from "./lazyloadHomeSection/HomeSection/Section4";
-import Header from "./Header";
+import  Section1  from "../components/Home/HomeSection/Section1";
+import  Section2  from "../components/Home/HomeSection/Section2";
+import  Section3  from "../components/Home/HomeSection/Section3";
+import  Section4  from "../components/Home/HomeSection/Section4";
+import Header from "../components/Common/Header";
 
 const Home: React.FC = () => {
 

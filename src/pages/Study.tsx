@@ -1,6 +1,6 @@
 import React, {SetStateAction, useState} from "react";
 import axios from "axios";
-import { StudyContainer,StudyTitle, LanguageButton, LanguageButtons } from "./StudyStyledComponent"
+import { StudyContainer,StudyTitle, LanguageButton, LanguageButtons } from "../components/Study/StudyStyledComponent"
 
 const Study = () => {
     const [languageContent, setLanguageContent] = useState("");

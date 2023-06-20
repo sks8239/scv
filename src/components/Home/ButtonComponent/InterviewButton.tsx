@@ -2,8 +2,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from "styled-components";
-import {BoxContent} from "../../../SelectPages/SelectPagesStyle";
-import StyledButton from './StyledButton';
+import {BoxContent} from "../../FunctionSelect/SelectPagesStyle";
+import StyledButton from '../../FunctionSelect/StyledButton';
 
 const InterViewButton: React.FC = () => {
     const navigate = useNavigate();

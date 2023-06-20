@@ -1,17 +1,15 @@
 import React from 'react';
 import { BoxWrapper, BoxContent, GroupWrapper, ImageWrapper, ButtonWrapper } from './SelectPagesStyle';
-import Header from '../Home/Header';
-import StudyButton from '../Home/lazyloadHomeSection/ButtonComponent/StudyButton';
-import QuizButton from '../Home/lazyloadHomeSection/ButtonComponent/QuizButton';
-import InterviewButton from '../Home/lazyloadHomeSection/ButtonComponent/InterviewButton';
-import studyImage from "../../images/studyImage.png";
-import quizImage from "../../images/quizImage.png";
-import interviewImage from "../../images/interviewImage.png";
+import StudyButton from './StudyButton';
+import QuizButton from './QuizButton';
+import InterviewButton from '../Home/ButtonComponent/InterviewButton';
+import studyImage from "../../resource/studyImage.png";
+import quizImage from "../../resource/quizImage.png";
+import interviewImage from "../../resource/interviewImage.png";
 
-const SelectPages: React.FC = () => {
+const FunctionSelectPage: React.FC = () => {
     return (
         <div>
-            <Header />
             <section>
                 <h1>선택 페이지</h1>
                 <BoxWrapper>
@@ -57,5 +55,4 @@ const SelectPages: React.FC = () => {
         </div>
     );
 };
-
-export default SelectPages;
+export default FunctionSelectPage;

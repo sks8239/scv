@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import backgroundImage from "../../../../images/session1background.png";
-import monitorImage from "../../../../images/monitor-removebg.png"
+import backgroundImage from "../../../resource/session1background.png";
+import monitorImage from "../../../resource/monitor-removebg.png"
 
 const Section1Wrapper = styled.div`
   display: flex;

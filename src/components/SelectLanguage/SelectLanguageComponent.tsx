@@ -4,6 +4,9 @@ import {Question, setQuestions} from '../../Redux/actionReducer'; // 액션 생�
 import { useNavigate } from 'react-router-dom'; // useNavigate import
 import { Button, SelectLanguageContainer, Heading, ButtonContainer, StartButton } from './SelectLanguageStyle';
 import axios from "axios";
+import {languageData} from '../../utils/Api'; // api.ts에서 가져온 데이터
+import { resetScore } from '../../Redux/actionReducer';
+
 
 const SelectLanguageComponent: React.FC = () => {
     const dispatch = useDispatch();
@@ -29,25 +32,50 @@ const SelectLanguageComponent: React.FC = () => {
 
     const handleSubmit = async () => {
         if (selectedLanguages.length === 0) {
-            alert('적어도 한 가지 언어를 선택해야 합니다.'); // 알림 표시
+            alert('적어도 한 가지 언어를 선택해야 합니다.'); // Display an alert
         } else {
             try {
-                console.log('선택된 언어:', selectedLanguages);
-                console.log(selectedLanguages.includes('C언어') ? 'selected' : '')
-                const response = await axios.get('/languages'); // 서버의 API 엔드포인트로 GET 요청
-                const languageData: Record<string, Question> = response.data; // 서버에서 받은 언어 정보
+                const questions: Question[] = [];
+                dispatch(resetScore()); // 스코어 리셋
 
-                // 언어 데이터를 액션에 담아 dispatch
-                const questions = Object.values(languageData); // 언어 데이터에서 문제들만 추출
-                dispatch(setQuestions(questions)); // 문제 데이터를 액션의 payload로 설정하여 dispatch
+                const numQuestionsPerLanguage = Math.floor(20 / selectedLanguages.length);
+                const remainingQuestions = 20 % selectedLanguages.length;
 
-                navigate('/quiz'); // '/quiz' 경로로 이동
+                selectedLanguages.forEach((language, index) => {
+                    const languageQuestions = languageData[language]?.questions || [];
+                    const shuffledQuestions = shuffleArray(languageQuestions); // 문제 배열을 랜덤하게 섞어줌
+
+                    let selectedQuestions = shuffledQuestions.slice(0, numQuestionsPerLanguage);
+
+                    // 마지막 언어일 때, 나머지 문제를 추가로 가져옴
+                    if (index === selectedLanguages.length - 1 && remainingQuestions > 0) {
+                        const remainingLanguageQuestions = shuffledQuestions.slice(numQuestionsPerLanguage, numQuestionsPerLanguage + remainingQuestions);
+                        selectedQuestions.push(...remainingLanguageQuestions);
+                    }
+
+                    questions.push(...selectedQuestions);
+                });
+
+                dispatch(setQuestions(questions));
+                navigate('/quiz');
             } catch (error) {
                 console.error('서버 요청 실패:', error);
-                // 에러 처리
+                // Handle the error
             }
         }
     };
+
+
+// 배열을 랜덤하게 섞어주는 함수
+    const shuffleArray = (array: any[]) => {
+        const shuffledArray = [...array];
+        for (let i = shuffledArray.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+        }
+        return shuffledArray;
+    };
+
 
     return (
         <SelectLanguageContainer>

@@ -10,7 +10,7 @@ const WebButton: React.FC<WebButtonProps> = ({ children }) => {
     const navigate = useNavigate();
 
     const navigateToQuiz = () => {
-        navigate('/SelectPages');
+        navigate('/FunctionSelectPage');
     };
 
     return (
