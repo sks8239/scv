@@ -9,6 +9,7 @@ import FunctionSelectPage from "./pages/FunctionSelectPage";
 import Mypage from "./pages/MyPage";
 import LoginPage from "./pages/LoginPage";
 import SelectLanguage from "./pages/SelectLanguagePage";
+import ResultPage from "./pages/ResultPage";
 import store from "./Redux/ReduxStore";
 import {Provider} from "react-redux";
 function App(): JSX.Element {
@@ -19,11 +20,12 @@ function App(): JSX.Element {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Quiz" element={<Quiz />} />
+            <Route path="/Result" element={<ResultPage />} />
             <Route path="/SelectLanguage" element={<SelectLanguage />} />
             <Route path="/Interview" element={<Interview />} />
             <Route path="/Study" element={<Study />} />
             <Route path="/Ranking" element={<Ranking />} />
-          <Route path="/Mypage" element={<Mypage />} />
+          <Route path="/my-page" element={<Mypage />} />
           <Route path="/LoginPage" element={<LoginPage />} />
           <Route path="/FunctionSelectPage" element={<FunctionSelectPage />} />
         </Routes>

@@ -83,7 +83,7 @@ const Header: React.FC = () => {
     const navigate = useNavigate();
 
     const handleMypageClick = () => {
-        navigate('/Mypage');
+        navigate('/My-page');
     };
     const handleLoginClick = () => {
         navigate("/LoginPage")

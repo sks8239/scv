@@ -11,6 +11,7 @@ const QuizComponent: React.FC = () => {
     const navigate = useNavigate();
     const questions = useSelector((state: RootState) => state.quiz.questions);
     const score = useSelector((state: RootState) => state.quiz.score); // useSelector로 점수 값 가져오기
+    const answers = useSelector((state: RootState) => state.quiz.answers); // useSelector로 사용자의 답변 가져오기
     const resetScore = useSelector((state : RootState) => state.quiz.score);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [selectedChoice, setSelectedChoice] = useState('');
@@ -23,11 +24,14 @@ const QuizComponent: React.FC = () => {
         dispatch(
             updateScore(selectedChoice === questions[currentQuestionIndex].correctAnswer ? 5 : 0)
         );
+
+        dispatch(setAnswers([...answers, selectedChoice])); // 선택한 답변을 저장
+        setSelectedChoice('');
+        setCurrentQuestionIndex(currentQuestionIndex + 1);
+
         if(selectedChoice === questions[currentQuestionIndex].correctAnswer){
             console.log("정답" + score);
         }else{console.log("오답" + score)}
-        setSelectedChoice('');
-        setCurrentQuestionIndex(currentQuestionIndex + 1);
     };
 
     useEffect(() => {
@@ -47,7 +51,7 @@ const QuizComponent: React.FC = () => {
             // await axios.post('/score', { id: 'user_id', score });
             console.log(score);
             // dispatch()
-            navigate('/result'); // 결과 페이지로 이동
+            navigate('/Result'); // 결과 페이지로 이동
         } catch (error) {
             console.error('서버 요청 실패:', error);
             // 에러 처리

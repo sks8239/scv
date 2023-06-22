@@ -16,17 +16,16 @@ const SelectLanguageComponent: React.FC = () => {
     const handleLanguageSelect = (language: string) => {
         let updatedLanguages = [...selectedLanguages]; // 현재 선택된 언어 배열 복사
 
-        if (updatedLanguages.length > 2) {
-            alert('최대 3개의 언어를 선택할 수 있습니다.');
-        } else {
             if (updatedLanguages.includes(language)) {
                 updatedLanguages = updatedLanguages.filter((lang) => lang !== language);
             } else {
-                updatedLanguages.push(language);
+                if (updatedLanguages.length > 2) {
+                    alert('최대 3개의 언어를 선택할 수 있습니다.');
+                }else {
+                    updatedLanguages.push(language);
+                }
             }
-
             setSelectedLanguages(updatedLanguages);
-        }
     };
 
 

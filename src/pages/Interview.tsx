@@ -1,11 +1,12 @@
 import React from "react";
+import InterviewComponent from "../components/Interview/InterviewComponent";
 
 const Interview = () => {
 
 
     return (
         <>
-            면접도 중요해
+            <InterviewComponent/>
         </>
     )
 }
