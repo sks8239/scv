@@ -9,20 +9,22 @@ const Section1Wrapper = styled.div`
   justify-content: center;
   height: 90vh;
   position: relative;
+  background-color: #3389FF;
+  color : white;
 
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url(${backgroundImage});
-    background-size: 120%; 
-    background-position: center center;
-    opacity: 0.2; /* 배경 이미지의 투명도 설정 */
-    z-index: -1;
-  }
+  // &:before {
+  //   content: "";
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   background-image: url(${backgroundImage});
+  //   background-size: 120%; 
+  //   background-position: center center;
+  //   opacity: 0.2; /* 배경 이미지의 투명도 설정 */
+  //   z-index: -1;
+  // }
 
   .scroll-to-section2 {
     position: absolute;

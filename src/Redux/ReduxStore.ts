@@ -1,5 +1,5 @@
 import { createStore, combineReducers } from 'redux';
-import { quizReducer, QuizState } from './actionReducer';
+import { quizReducer, QuizState } from './QuizActionReducer';
 
 export interface RootState {
     quiz: QuizState;

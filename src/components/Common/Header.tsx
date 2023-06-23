@@ -1,13 +1,18 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import styled from 'styled-components';
 
-const HeaderWrapper = styled.header`
+interface HeaderWrapperProps {
+    isScrolled: boolean;
+}
+
+const HeaderWrapper = styled.header<HeaderWrapperProps>`
   position: sticky;
   top: 0;
-  background-color: #f5f5f5;
+  background-color: ${(props) => (props.isScrolled ? '#FFFFFF' : '#3389FF')};
   z-index: 100;
 `;
+
 
 const Nav = styled.nav`
   display: flex;
@@ -79,6 +84,7 @@ const MyPageButton = styled.button`
 `;
 
 const Header: React.FC = () => {
+    const [isScrolled, setIsScrolled] = useState(false);
 
     const navigate = useNavigate();
 
@@ -88,8 +94,22 @@ const Header: React.FC = () => {
     const handleLoginClick = () => {
         navigate("/LoginPage")
     }
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 0);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+
+
     return (
-        <HeaderWrapper>
+        <HeaderWrapper isScrolled={isScrolled}>
             <Nav>
                 <Ul>
                     <Li>

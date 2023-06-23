@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../Redux/ReduxStore';
-import { setAnswers, updateScore } from '../../Redux/actionReducer';
+import { setAnswers, updateScore } from '../../Redux/QuizActionReducer';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { QuestionContainer, ChoicesContainer, StyledButton, NextButton } from './QuizStyledComponent';

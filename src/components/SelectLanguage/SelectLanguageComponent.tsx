@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import {Question, setQuestions} from '../../Redux/actionReducer'; // 액션 생성 함수 import
+import {Question, setQuestions} from '../../Redux/QuizActionReducer'; // 액션 생성 함수 import
 import { useNavigate } from 'react-router-dom'; // useNavigate import
 import { Button, SelectLanguageContainer, Heading, ButtonContainer, StartButton } from './SelectLanguageStyle';
 import axios from "axios";
 import {languageData} from '../../utils/Api'; // api.ts에서 가져온 데이터
-import { resetScore } from '../../Redux/actionReducer';
+import { resetScore } from '../../Redux/QuizActionReducer';
 
 
 const SelectLanguageComponent: React.FC = () => {

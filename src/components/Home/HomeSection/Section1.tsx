@@ -17,9 +17,9 @@ const Section1 = () => {
 
     return(
         <>
-            <LazyLoadedSection backgroundColor="white">
+            {/*<LazyLoadedSection backgroundColor="white">*/}
                 <Section1Wrapper>
-                    <h1>공부부터 면접까지<br/>SCV에서</h1>
+                    <h1>퀴즈부터 공부, 면접까지 한번에!<br/>코딩 학습 플랫폼, 코드올</h1>
                     <ButtonWrapper>
                         <DownloadButtonStyle><p><Download className="download-icon"/> 앱 다운로드</p></DownloadButtonStyle>
                         <WebButton>웹에서 이용하기</WebButton>
@@ -28,7 +28,7 @@ const Section1 = () => {
                         ▽
                     </button>
                 </Section1Wrapper>
-            </LazyLoadedSection>
+            {/*</LazyLoadedSection>*/}
             <div id="section2" ref={section2Ref} />
         </>
     )

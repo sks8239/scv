@@ -9,9 +9,11 @@ const Section3 = () => {
 
     return(
         <>
-            <LazyLoadedSection backgroundColor="#F9FAFB">
+            <LazyLoadedSection backgroundColor="#F4F7FC">
                 <Section3Wrapper>
-                    <div className="section3head">학교 랭크를 통해 경쟁하고,<br/>개인 랭크를 통해 본인의 실력을 파악하세요.</div>
+                    <div className="section3head">퀴즈를 풀고 랭크를 획득하세요.<br/></div>
+                    <div>개인 랭크를 통해 본인의 실력을 파악하세요.</div>
+                    <div>학교끼리 경쟁하세요</div>
                 </Section3Wrapper>
             </LazyLoadedSection>
         </>

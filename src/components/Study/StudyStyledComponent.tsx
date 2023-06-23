@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
-const StudyContainer = styled.div`
-  text-align: center;
-`;
+
 
 const StudyTitle = styled.h2`
   font-size: 24px;
@@ -23,16 +21,17 @@ const LanguageButton = styled.button`
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-
+  margin-bottom: 50px;
   &:hover {
     background-color: #dcdcdc;
   }
 
-  &:active,
+  &.active,
   &:focus {
     background-color: #a0a0a0;
     border: 2px solid #333333;
     outline: none;
   }
+
 `;
-export {StudyContainer,StudyTitle, LanguageButton, LanguageButtons};
+export { StudyTitle, LanguageButton, LanguageButtons};
