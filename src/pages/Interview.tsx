@@ -1,18 +1,32 @@
 import React, { useState } from "react";
 import InterviewButtonComponent from "../components/Interview/InterviewButtonComponent";
 import ContentComponent from "../components/Interview/InterviewContentComponent";
-import PaginationComponent from "../components/Interview/PaginationComponent";
+import InterviewPaginationComponent from "../components/Interview/InterviewPaginationComponent";
 import { interviewData } from "../utils/InterviewApi";
 import { commentData } from "../utils/CommentApi";
 import Header from "../components/Common/Header";
+import {useDispatch, useSelector} from "react-redux";
+import {
+    InterviewState,
+    setActiveLanguage,
+    setCurrentPage,
+    setExampleComment,
+    setLanguageComment, setLanguageContent, setShowContent
+} from "../Redux/InterviewActionReducer";
+import {RootState} from "../Redux/ReduxStore";
 
 const Interview = () => {
-    const [languageContent, setLanguageContent] = useState<string[]>([]);
-    const [languageComment, setLanguageComment] = useState<string[][]>([]);
-    const [exampleComment, setExampleComment] = useState<string[]>([]);
-    const [activeLanguage, setActiveLanguage] = useState("");
-    const [showContent, setShowContent] = useState<boolean[]>([]);
-    const [currentPage, setCurrentPage] = useState<number>(1);
+    // @ts-ignore
+    const dispatch = useDispatch();
+    const interviewState = useSelector((state: RootState) => state.interview);
+    const {
+        languageContent,
+        languageComment,
+        exampleComment,
+        activeLanguage,
+        showContent,
+        currentPage,
+    } = interviewState;
 
     const handleButtonClick = async (language: string) => {
         try {
@@ -23,12 +37,12 @@ const Interview = () => {
                 const languageContents = interview.map((item) => item.interviewContent);
                 const languageComments = comment.map((comment) => comment.comment);
                 const exampleComment = interview.map((example) => example.exampleAnswer);
-                setExampleComment(exampleComment);
-                setLanguageContent(languageContents);
-                setLanguageComment(languageComments);
-                setShowContent(new Array(languageContents.length).fill(false));
-                setActiveLanguage(language);
-                setCurrentPage(1); // 언어 변경 시 현재 페이지를 1로 초기화
+                dispatch(setExampleComment(exampleComment));
+                dispatch(setLanguageContent(languageContents));
+                dispatch(setLanguageComment(languageComments));
+                dispatch(setShowContent(new Array(languageContents.length).fill(false)));
+                dispatch(setActiveLanguage(language));
+                dispatch(setCurrentPage(1)); // 언어 변경 시 현재 페이지를 1로 초기화
             }
         } catch (error) {
             console.error("Error:", error);
@@ -36,13 +50,12 @@ const Interview = () => {
     };
 
     const handleInterviewClick = (index: number) => {
-        const newShowContent = [...showContent];
-        newShowContent[index] = !newShowContent[index];
-        setShowContent(newShowContent);
+        dispatch(setShowContent([...showContent.slice(0, index), !showContent[index], ...showContent.slice(index + 1)]));
     };
 
+
     const handlePageChange = (pageNumber: number) => {
-        setCurrentPage(pageNumber);
+        dispatch(setCurrentPage(pageNumber));
     };
 
 
@@ -63,7 +76,7 @@ const Interview = () => {
                 handleInterviewClick={handleInterviewClick}
             />
 
-            <PaginationComponent
+            <InterviewPaginationComponent
                 currentPage={currentPage}
                 handlePageChange={handlePageChange}
                 activeLanguage={activeLanguage}

@@ -12,6 +12,7 @@ import SelectLanguage from "./pages/SelectLanguagePage";
 import ResultPage from "./pages/ResultPage";
 import store from "./Redux/ReduxStore";
 import {Provider} from "react-redux";
+import SignUp from './pages/SignUp'
 function App(): JSX.Element {
   return (
     <>
@@ -25,6 +26,7 @@ function App(): JSX.Element {
             <Route path="/Interview" element={<Interview />} />
             <Route path="/Study" element={<Study />} />
             <Route path="/Ranking" element={<Ranking />} />
+            <Route path="/SignUp" element={<SignUp />} />
           <Route path="/my-page" element={<Mypage />} />
           <Route path="/LoginPage" element={<LoginPage />} />
           <Route path="/FunctionSelectPage" element={<FunctionSelectPage />} />

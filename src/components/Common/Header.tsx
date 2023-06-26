@@ -113,7 +113,7 @@ const Header: React.FC = () => {
             <Nav>
                 <Ul>
                     <Li>
-                        <NavLink to="/">logo</NavLink>
+                        <NavLink to="/">CodeAll</NavLink>
                     </Li>
                     <Li>
                         <NavLink to="/Study">공부하기</NavLink>

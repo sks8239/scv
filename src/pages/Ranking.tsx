@@ -1,11 +1,12 @@
 import React from "react";
+import RankComponent from "../components/Rank/RankComponent";
 
 const Ranking = () => {
 
 
     return (
         <>
-            랭킹이 있어야지
+            <RankComponent />
         </>
     )
 }

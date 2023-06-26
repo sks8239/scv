@@ -1,18 +1,17 @@
-
-import Login from '../components/Login/Login'
 import React, { useState } from 'react';
 import Header from 'components/Common/Header';
+import CodeAllLogin from 'components/SignUp/CodeAllSignUp';
 
 
-const LoginPage : React.FC  = () =>{
+const SignUp : React.FC  = () =>{
 
 
     return(
         <>
             <Header/>
-            <Login/>
+            <CodeAllLogin/>
         </>
     )
 };
 
-export default LoginPage;
+export default SignUp;
